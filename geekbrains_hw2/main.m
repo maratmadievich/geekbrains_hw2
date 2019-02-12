@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+//первый коммит
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
