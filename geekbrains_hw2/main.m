@@ -24,7 +24,7 @@
 int main(int argc, const char * argv[]) {
     
     @autoreleasepool {
-//        int selectedHomework = -1;
+        int selectedHomework = -1;
         
         HomeworkOne *homeworkOne = [[HomeworkOne alloc]init];
         
