@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		847877F82212792F0049ACF5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 847877F72212792F0049ACF5 /* main.m */; };
 		84787801221279C70049ACF5 /* HomeworkOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 84787800221279C70049ACF5 /* HomeworkOne.m */; };
+		84A6097D22140E4700AA8B37 /* HomeworkTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A6097C22140E4700AA8B37 /* HomeworkTwo.m */; };
+		84A6098022140E5400AA8B37 /* HomeworkThree.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A6097F22140E5400AA8B37 /* HomeworkThree.m */; };
+		84A6098322140E6200AA8B37 /* HomeworkFour.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A6098222140E6200AA8B37 /* HomeworkFour.m */; };
+		84A6098622140E7000AA8B37 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A6098522140E7000AA8B37 /* Student.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +32,14 @@
 		847877F72212792F0049ACF5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		847877FF221279C70049ACF5 /* HomeworkOne.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeworkOne.h; sourceTree = "<group>"; };
 		84787800221279C70049ACF5 /* HomeworkOne.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeworkOne.m; sourceTree = "<group>"; };
+		84A6097B22140E4700AA8B37 /* HomeworkTwo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeworkTwo.h; sourceTree = "<group>"; };
+		84A6097C22140E4700AA8B37 /* HomeworkTwo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeworkTwo.m; sourceTree = "<group>"; };
+		84A6097E22140E5400AA8B37 /* HomeworkThree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeworkThree.h; sourceTree = "<group>"; };
+		84A6097F22140E5400AA8B37 /* HomeworkThree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeworkThree.m; sourceTree = "<group>"; };
+		84A6098122140E6200AA8B37 /* HomeworkFour.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeworkFour.h; sourceTree = "<group>"; };
+		84A6098222140E6200AA8B37 /* HomeworkFour.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeworkFour.m; sourceTree = "<group>"; };
+		84A6098422140E7000AA8B37 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		84A6098522140E7000AA8B37 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +73,9 @@
 			isa = PBXGroup;
 			children = (
 				847877FE221279AC0049ACF5 /* HomeworkOne */,
+				84A6097722140E0F00AA8B37 /* HomeworkTwo */,
+				84A6097822140E1C00AA8B37 /* HomeworkThree */,
+				84A6097922140E2400AA8B37 /* HomeworkFour */,
 				847877F72212792F0049ACF5 /* main.m */,
 			);
 			path = geekbrains_hw2;
@@ -73,6 +88,43 @@
 				84787800221279C70049ACF5 /* HomeworkOne.m */,
 			);
 			path = HomeworkOne;
+			sourceTree = "<group>";
+		};
+		84A6097722140E0F00AA8B37 /* HomeworkTwo */ = {
+			isa = PBXGroup;
+			children = (
+				84A6097B22140E4700AA8B37 /* HomeworkTwo.h */,
+				84A6097C22140E4700AA8B37 /* HomeworkTwo.m */,
+			);
+			path = HomeworkTwo;
+			sourceTree = "<group>";
+		};
+		84A6097822140E1C00AA8B37 /* HomeworkThree */ = {
+			isa = PBXGroup;
+			children = (
+				84A6097E22140E5400AA8B37 /* HomeworkThree.h */,
+				84A6097F22140E5400AA8B37 /* HomeworkThree.m */,
+			);
+			path = HomeworkThree;
+			sourceTree = "<group>";
+		};
+		84A6097922140E2400AA8B37 /* HomeworkFour */ = {
+			isa = PBXGroup;
+			children = (
+				84A6097A22140E3500AA8B37 /* Student */,
+				84A6098122140E6200AA8B37 /* HomeworkFour.h */,
+				84A6098222140E6200AA8B37 /* HomeworkFour.m */,
+			);
+			path = HomeworkFour;
+			sourceTree = "<group>";
+		};
+		84A6097A22140E3500AA8B37 /* Student */ = {
+			isa = PBXGroup;
+			children = (
+				84A6098422140E7000AA8B37 /* Student.h */,
+				84A6098522140E7000AA8B37 /* Student.m */,
+			);
+			path = Student;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,8 +183,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84A6098322140E6200AA8B37 /* HomeworkFour.m in Sources */,
 				84787801221279C70049ACF5 /* HomeworkOne.m in Sources */,
 				847877F82212792F0049ACF5 /* main.m in Sources */,
+				84A6098022140E5400AA8B37 /* HomeworkThree.m in Sources */,
+				84A6097D22140E4700AA8B37 /* HomeworkTwo.m in Sources */,
+				84A6098622140E7000AA8B37 /* Student.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
