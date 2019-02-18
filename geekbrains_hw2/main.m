@@ -11,11 +11,12 @@
 #import "HomeworkTwo.h"
 #import "HomeworkThree.h"
 #import "HomeworkFour.h"
+#import "HomeworkFive.h"
 
 int selectHomework() {
     int value = -1;
     printf("Выберите Домашнее задание:\n");
-    printf("1-4 ДЗ;\n");
+    printf("1-5 ДЗ;\n");
     printf("0 Выход.\n");
     scanf("%d", &value);
     printf("\n\n");
@@ -33,6 +34,7 @@ int main(int argc, const char * argv[]) {
         HomeworkTwo *homeworkTwo = [[HomeworkTwo alloc]init];
         HomeworkThree *homeworkThree = [[HomeworkThree alloc]init];
         HomeworkFour *homeworkFour = [[HomeworkFour alloc]init];
+        HomeworkFive *homeworkFive = [[HomeworkFive alloc]init];
         
         do {
             selectedHomework = selectHomework();
@@ -54,6 +56,10 @@ int main(int argc, const char * argv[]) {
                     
                 case 4:
                     [homeworkFour showStudents];
+                    break;
+                    
+                case 5:
+                    [homeworkFive selectTask];
                     break;
                     
                 default:

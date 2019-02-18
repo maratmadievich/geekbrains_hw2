@@ -10,45 +10,98 @@
 
 @implementation Calculator
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        __first  = [[NSNumber alloc] init];
+        __second  = [[NSNumber alloc] init];
+        [__first retain];
+        [__second retain];
+    }
+    return self;
+}
+
+
+- (float)first {
+    return [__first floatValue];
+}
+
+- (void)setFirst:(float *)first {
+    [self._first release];
+    self._first = @(* first);
+    [self._first retain];
+}
+
+
+- (float)second {
+    return [__second floatValue];
+}
+
+- (void)setSecond:(float *)second {
+    [self._second release];
+    self._second = @(* second);
+    [self._second retain];
+}
+
+
+- (void) calculateAddition {
+    printf("%f + %f = %f \n\n", [self first], [self second], [self first] + [self second]);
+}
+
+- (void) calculateSubtraction {
+    printf("%f - %f = %f \n\n", [self first], [self second], [self first] - [self second]);
+}
+
+- (void) calculateMultiplication {
+    printf("%f * %f = %f \n\n", [self first], [self second], [self first] * [self second]);
+}
+
+- (void) calculateDeletion {
+    if ([self second] != 0) {
+        printf("%f / %f = %f \n\n", [self first], [self second], [self first] / [self second]);
+    } else {
+        printf("На 0 делить нельзя \n\n");
+    }
+}
 
 
 -(void) startCalculate {
     
-    float firstValue;
-    float secondValue;
+    float first;
+    float second;
     Operation operator;
     
     bool programComplete = true;
     do {
         printf("Первое число: ");
-        scanf("%f", &firstValue);
-        [self setFirst:firstValue];
+        scanf("%f", &first);
+        [self setFirst: &first];
         
         printf("Второе число: ");
-        scanf("%f", &secondValue);
-        [self setSecond:secondValue];
+        scanf("%f", &second);
+        [self setSecond: &second];
         
         printf("Действие \"+-/*\": ");
         scanf("%s", &operator);
         printf("\n");
         switch (operator) {
             case addition:
-                calculateAddition(&first, &second);
+                [self calculateAddition];
                 programComplete = true;
                 break;
                 
             case subtraction:
-                calculateSubtraction(&first, &second);
+                [self calculateSubtraction];
                 programComplete = true;
                 break;
                 
             case deletion:
-                calculateDeletion(&first, &second);
+                [self calculateDeletion];
                 programComplete = true;
                 break;
                 
             case multiplication:
-                calculateMultiplication(&first, &second);
+                [self calculateMultiplication];
                 programComplete = true;
                 break;
                 
@@ -60,27 +113,10 @@
 }
 
 
-- (NSNumber *)first {
-    return self._first;
+- (void)dealloc {
+    [__first release];
+    [__second release];
+    [super dealloc];
 }
-- (void)setFirst:(float)first {
-    self._first = @(first);
-}
-
-
-- (NSNumber *)second {
-    return self._first;
-}
-- (void)setSecond:(float)second {
-    self._second = @(second);
-}
-//
-//- (Operation)myOperator {
-//    return self._myOperator;
-//};
-//- (void)setOperator:(Operation)myOperator {
-//    self._myOperator = myOperator;
-//};
-
 
 @end

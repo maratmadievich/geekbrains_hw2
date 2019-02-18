@@ -20,17 +20,15 @@ typedef NS_ENUM(char, Operation) {
 -(void)startCalculate;
 
 @property (atomic) Operation _myOperator;
-@property (atomic, weak) NSNumber* _first;
-@property (atomic, weak) NSNumber* _second;
-//
-//
-- (NSNumber *)first;
-- (void)setFirst:(float)first;
 
-- (NSNumber *)second;
-- (void)setSecond:(float)second;
-//
-//- (Operation)myOperator;
-//- (void)setOperator:(Operation)myOperator;
+@property (atomic) NSNumber* _first;
+@property (atomic) NSNumber* _second;
+
+- (float)first;
+- (void)setFirst:(float *)first;
+
+- (float)second;
+- (void)setSecond:(float *)second;
+
 
 @end

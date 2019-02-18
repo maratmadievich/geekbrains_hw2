@@ -7,121 +7,63 @@
 //
 
 #import "HomeworkFive.h"
+#import "Calculator.h"
+#import "Flock.h"
+#import "Bird.h"
+#import "Wing.h"
+//#import ""
 
 @implementation HomeworkFive
 
-
-    
 -(void)selectTask {
     
-    NSAutoreleasePool *pool;
-
-    int value = -1;
-    do {
-        printf("Выберите задание:\n1) Калькулятор;\n2) Стая птиц; \n0) выход.\n");
-        scanf("%d", &value);
-        printf("\n\n");
-        switch (value) {
-            case 0:
-                break;
-                
-            case 1:
-                [self taskOne];
-                break;
-                
-//            case 2:
-//                [self taskTwo];
-                break;
-                
-            default:
-                printf("Выберите другое значение\n");
-                break;
-        }
-    } while (value != 0);
+    @autoreleasepool {
+        int value = -1;
+        do {
+            printf("Выберите задание:\n1) Калькулятор;\n2) Стая птиц; \n0) выход.\n");
+            scanf("%d", &value);
+            printf("\n\n");
+            switch (value) {
+                case 0:
+                    break;
+                    
+                case 1:
+                    [self taskOne];
+                    break;
+                    
+                case 2:
+                    [self taskTwo];
+                    break;
+                    
+                default:
+                    printf("Выберите другое значение\n");
+                    break;
+            }
+        } while (value != 0);
+    }
 }
 
 
 -(void) taskOne {
-    char operation[1];
-    
-    bool programComplete = true;
-    do {
-        printf("Первое число: ");
-        scanf("%f", first);
-        printf("Второе число: ");
-        scanf("%f", second);
-        printf("Действие \"+-/*\": ");
-        scanf("%s", operation);
-        printf("\n");
-        switch (operation[0]) {
-            case addition:
-                calculateAddition(&first, &second);
-                programComplete = true;
-                break;
-                
-            case subtraction:
-                calculateSubtraction(&first, &second);
-                programComplete = true;
-                break;
-                
-            case deletion:
-                calculateDeletion(&first, &second);
-                programComplete = true;
-                break;
-                
-            case multiplication:
-                calculateMultiplication(&first, &second);
-                programComplete = true;
-                break;
-                
-            default:
-                programComplete = false;
-                break;
-        }
-    } while (!programComplete);
+    Calculator *calculator = [[Calculator alloc] init];
+    [calculator startCalculate];
 }
 
-//-(void) taskTwo {
-//    
-//    float first = 0;
-//    float second = 0;
-//    char operation[1];
-//    
-//    bool programComplete = true;
-//    do {
-//        printf("Первое число: ");
-//        scanf("%f", &first);
-//        printf("Второе число: ");
-//        scanf("%f", &second);
-//        printf("Действие \"+-/*\": ");
-//        scanf("%s", operation);
-//        printf("\n");
-//        switch (operation[0]) {
-//            case addition:
-//                calculateAddition(&first, &second);
-//                programComplete = true;
-//                break;
-//                
-//            case subtraction:
-//                calculateSubtraction(&first, &second);
-//                programComplete = true;
-//                break;
-//                
-//            case deletion:
-//                calculateDeletion(&first, &second);
-//                programComplete = true;
-//                break;
-//                
-//            case multiplication:
-//                calculateMultiplication(&first, &second);
-//                programComplete = true;
-//                break;
-//                
-//            default:
-//                programComplete = false;
-//                break;
-//        }
-//    } while (!programComplete);
-//}
+-(void) taskTwo {
+    Flock *flock = [[Flock alloc] init];
+    
+    Wing *eagleWing = [[Wing alloc] initWithCount: @2 andReach: @2.8];
+    Bird *eagle = [[Bird alloc] initWithBreed: @"Орёл" andWing: eagleWing];
+    
+    Wing *sparrowWing = [[Wing alloc] initWithCount: @2 andReach: @0.3];
+    Bird *sparrow = [[Bird alloc] initWithBreed: @"Воробей" andWing: sparrowWing];
+    
+    
+    NSArray *birds = [[NSArray alloc] initWithObjects: eagle, sparrow, nil];
+    [flock configure: birds];
+    
+    // Освобождение автомобиля и удаление компонентов
+    [flock release];
+}
 
 @end
