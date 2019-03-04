@@ -12,14 +12,22 @@
 #import "HomeworkThree.h"
 #import "HomeworkFour.h"
 #import "HomeworkFive.h"
+#import "HomeworkSix.h"
 
 int selectHomework() {
+    
     int value = -1;
+    
     printf("Выберите Домашнее задание:\n");
-    printf("1-5 ДЗ;\n");
+    
+    printf("1-6 ДЗ;\n");
+    
     printf("0 Выход.\n");
+    
     scanf("%d", &value);
+    
     printf("\n\n");
+    
     return value;
 }
 
@@ -28,44 +36,75 @@ int selectHomework() {
 int main(int argc, const char * argv[]) {
     
     @autoreleasepool {
+        
         int selectedHomework = -1;
         
         HomeworkOne *homeworkOne = [[HomeworkOne alloc]init];
+        
         HomeworkTwo *homeworkTwo = [[HomeworkTwo alloc]init];
+        
         HomeworkThree *homeworkThree = [[HomeworkThree alloc]init];
+        
         HomeworkFour *homeworkFour = [[HomeworkFour alloc]init];
+        
         HomeworkFive *homeworkFive = [[HomeworkFive alloc]init];
         
+        HomeworkSix *homeworkSix = [[HomeworkSix alloc]init];
+        
         do {
+           
             selectedHomework = selectHomework();
+            
             switch (selectedHomework) {
+            
                 case 0: //Выход
+                
                     break;
                     
                 case 1:
+                    
                     [homeworkOne selectTask];
+                    
                     break;
                     
                 case 2:
+                    
                     [homeworkTwo selectTask];
+                    
                     break;
                     
                 case 3:
+                    
                     [homeworkThree selectTask];
+                    
                     break;
                     
                 case 4:
+                    
                     [homeworkFour showStudents];
+                    
                     break;
                     
                 case 5:
+                    
                     [homeworkFive selectTask];
+                    
+                    break;
+                    
+                case 6:
+                    
+                    [homeworkSix selectTask];
+                    
                     break;
                     
                 default:
+                    
                     break;
             }
+            
         } while (selectedHomework != 0);
+        
     }
+    
     return 0;
 }

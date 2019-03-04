@@ -11,14 +11,17 @@
 @interface Student : NSObject
 
 @property () NSString *_name;
+
 @property () NSString *_surname;
 
 @property (readonly) NSInteger _age;
 
 - (NSString *)name;
+
 - (void)setName:(NSString *)name;
 
 - (NSString *)surname;
+
 - (void)setSurname:(NSString *)surname;
 
 - (NSString *)fullname;

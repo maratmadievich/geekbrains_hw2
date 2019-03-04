@@ -11,9 +11,13 @@
 @interface Calculator : NSObject
 
 typedef NS_ENUM(char, Operation) {
+   
     addition = '+',
+    
     subtraction = '-',
+    
     multiplication = '*',
+    
     deletion = '/'
 };
 
@@ -22,12 +26,15 @@ typedef NS_ENUM(char, Operation) {
 @property (atomic) Operation _myOperator;
 
 @property (atomic) NSNumber* _first;
+
 @property (atomic) NSNumber* _second;
 
 - (float)first;
+
 - (void)setFirst:(float *)first;
 
 - (float)second;
+
 - (void)setSecond:(float *)second;
 
 

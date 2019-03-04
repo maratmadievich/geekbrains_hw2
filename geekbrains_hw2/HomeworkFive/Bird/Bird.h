@@ -16,6 +16,7 @@
 - (void)showBird;
 
 @property (nonatomic, strong) Wing *wing;
+
 @property (nonatomic, strong) NSString *breed;
 
 @end

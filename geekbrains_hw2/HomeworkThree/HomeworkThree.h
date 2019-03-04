@@ -9,20 +9,31 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(bool, Gender) {
+   
     male = true,
+    
     female = false
 };
 
+
 enum Operation {
+
     addition = '+',
+
     subtraction = '-',
+
     multiplication = '*',
+
     deletion = '/'
 };
 
+
 struct Human {
+
     NSString *name;
+
     NSInteger age;
+
     Gender gender;
 };
 
