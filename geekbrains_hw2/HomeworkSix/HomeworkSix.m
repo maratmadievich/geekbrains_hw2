@@ -121,67 +121,67 @@ void (^deletion)(int,int) = ^(int first, int second) {
         
         dispatch_queue_t queueSlow = dispatch_get_global_queue(QOS_CLASS_UTILITY, 0);
         
-        dispatch_queue_t queueFast = dispatch_get_global_queue(QOS_CLASS_UTILITY, 0);
+        dispatch_queue_t queueFast = dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0);
         
         dispatch_group_async(group, queueSlow, ^{
             
-            NSLog(@"К a = %ld прибавили 3", (long)a);
+            NSLog(@"К a = %ld прибавили 3, queueSlow", (long)a);
             
             a = a + 3;
         });
         
         dispatch_group_async(group, queueFast, ^{
             
-            NSLog(@"a = %ld умножили на 2", (long)a);
+            NSLog(@"a = %ld умножили на 2, queueFast", (long)a);
         
             a = a * 2;
         });
         
         dispatch_group_async(group, queueSlow, ^{
             
-            NSLog(@"К a = %ld прибавили 8", (long)a);
+            NSLog(@"К a = %ld прибавили 8, queueSlow", (long)a);
             
             a = a + 8;
         });
         
         dispatch_group_async(group, queueSlow, ^{
             
-            NSLog(@"К a = %ld прибавили 100", (long)a);
+            NSLog(@"К a = %ld прибавили 100, queueSlow", (long)a);
             
             a = a + 100;
         });
         
         dispatch_group_async(group, queueSlow, ^{
             
-            NSLog(@"От a = %ld отняли 10", (long)a);
+            NSLog(@"От a = %ld отняли 10, queueSlow", (long)a);
             
             a = a - 10;
         });
         
         dispatch_group_async(group, queueFast, ^{
             
-            NSLog(@"a = %ld поделили на 2", (long)a);
+            NSLog(@"a = %ld поделили на 2, queueFast", (long)a);
             
             a = a / 2;
         });
         
         dispatch_group_async(group, queueSlow, ^{
             
-            NSLog(@"От b = %ld отняли 5", (long)b);
+            NSLog(@"От b = %ld отняли 5, queueSlow", (long)b);
             
             b = b - 5;
         });
         
         dispatch_group_async(group, queueSlow, ^{
             
-            NSLog(@"От b = %ld отняли 10", (long)b);
+            NSLog(@"От b = %ld отняли 10, queueSlow", (long)b);
             
             b = b - 10;
         });
         
         dispatch_group_async(group, queueFast, ^{
             
-            NSLog(@"b = %ld разделили на 5", (long)b);
+            NSLog(@"b = %ld разделили на 5, queueFast", (long)b);
             
             b = b / 5;
         });
