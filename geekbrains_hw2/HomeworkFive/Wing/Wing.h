@@ -13,9 +13,11 @@
 - (instancetype) initWithCount:(NSNumber *)count andReach:(NSNumber *)reach;
 
 @property (nonatomic, strong) NSNumber *_count;
+
 @property (nonatomic, strong) NSNumber *_reach;
 
 - (float)count;
+
 - (float)reach;
 
 @end

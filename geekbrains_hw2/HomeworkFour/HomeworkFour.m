@@ -14,19 +14,24 @@
 -(void)showStudents {
     
     Student *studentAlex = [[Student alloc] init];
+    
     Student *studentAlice = [[Student alloc] init];
     
     [studentAlex setName: @"Alex"];
+    
     [studentAlex setSurname: @"Volkanovski"];
+    
     [studentAlex additionAge: 21];
     
     [studentAlice setName: @"Alice"];
+    
     [studentAlice setSurname: @"Cooper"];
+    
     [studentAlice additionAge: 19];
     
     NSLog(@"%@", [studentAlex description]);
-    NSLog(@"%@", [studentAlice description]);
     
+    NSLog(@"%@", [studentAlice description]);
     
 }
 

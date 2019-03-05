@@ -12,41 +12,65 @@
 @implementation Bird
 
 - (instancetype)init {
+    
     self = [super init];
+    
     if (self) {
+    
         NSLog(@"Создание птицы");
     }
+    
     return self;
 }
 
+
 - (instancetype)initWithBreed:(NSString *)breed andWing:(Wing *)wing {
+
     self = [super init];
+
     if (self) {
+
         [wing retain];
+
         [wing release];
+
         _wing = wing;
+
         NSLog(@"Добавлены крылья птице");
         
         [breed retain];
+
         [breed release];
+
         _breed = breed;
     }
+    
     return self;
 }
 
+
 - (void)showBird {
+    
     NSLog(@"Порода - %@; количество крыльев - %f; размах крыльев - %f", _breed, [_wing count], [_wing reach]);
 }
 
+
 - (void)remove {
+   
     NSLog(@"Удаляется птичка");
+    
     [_breed release];
+    
     [_wing release];
 }
 
+
 - (void)dealloc {
+    
     [self remove];
+    
     NSLog(@"Dealloc птички");
+    
     [super dealloc];
 }
 
