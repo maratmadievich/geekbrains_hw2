@@ -10,33 +10,61 @@
 
 @implementation HomeworkSix
 
-void (^square)(int) = ^(int number) {
+int (^square)(int) = ^(int number) {
     
-    NSLog(@"%i в квадрате = %i", number, number * number);
+    int result = number * number;
+    
+    NSLog(@"%i в квадрате = %i", number, result);
+    
+    return result;
 };
 
 
-void (^addition)(int,int) = ^(int first, int second) {
+int (^addition)(int) = ^(int first) {
+
+    int second = arc4random_uniform(100);
     
-    NSLog(@"%i + %i = %i", first, second, first + second);
+    int result = first + second;
+    
+    NSLog(@"%i + %i = %i", first, second, result);
+    
+    return result;
 };
 
 
-void (^substraction)(int,int) = ^(int first, int second) {
+int (^substraction)(int) = ^(int first) {
     
-    NSLog(@"%i - %i = %i", first, second, first - second);
+    int second = arc4random_uniform(100);
+    
+    int result = first - second;
+    
+    NSLog(@"%i - %i = %i", first, second, result);
+    
+    return result;
 };
 
 
-void (^multiplication)(int,int) = ^(int first, int second) {
+int (^multiplication)(int) = ^(int first) {
     
-   NSLog(@"%i * %i = %i", first, second, first * second);
+    int second = arc4random_uniform(100);
+    
+    int result = first * second;
+    
+    NSLog(@"%i * %i = %i", first, second, result);
+    
+    return result;
 };
 
 
-void (^deletion)(int,int) = ^(int first, int second) {
+int (^deletion)(int) = ^(int first) {
     
-    NSLog(@"%i / %i = %i", first, second, first / second);
+    int second = arc4random_uniform(99) + 1;
+    
+    int result = first / second;
+    
+    NSLog(@"%i / %i = %i", first, second, result);
+    
+    return result;
 };
 
 
@@ -48,7 +76,7 @@ void (^deletion)(int,int) = ^(int first, int second) {
         
         do {
         
-            printf("\nВыберите задание:\n1) Блоки;\n2) Многопоточность; \n0) выход.\n");
+            printf("\nВыберите задание:\n1) Блоки; \n2) Многопоточность; \n3) NSOperationQueue; \n0) выход.\n");
             
             scanf("%d", &value);
             
@@ -72,6 +100,12 @@ void (^deletion)(int,int) = ^(int first, int second) {
                     
                     break;
                     
+                case 3:
+                    
+                    [self taskThree];
+                    
+                    break;
+                    
                 default:
                     
                     printf("Выберите другое значение\n");
@@ -90,20 +124,22 @@ void (^deletion)(int,int) = ^(int first, int second) {
     
     @autoreleasepool {
         
-        int first = 100;
+        int first = 30;
         
-        int second = 5;
+        __block int resultSum = 0;
         
-        addition(first, second);
+        void (^sum)(void) = ^() {
+            
+            resultSum = addition(first)
+                        + substraction(first)
+                        + multiplication(first)
+                        + deletion(first)
+                        + square(first);
+        };
         
-        substraction(first, second);
+        sum();
         
-        multiplication(first, second);
-        
-        deletion(first, second);
-        
-        square(first);
-        
+        NSLog(@"Результирующим значением всех блоков является %i", resultSum);
     }
     
 }
@@ -196,4 +232,127 @@ void (^deletion)(int,int) = ^(int first, int second) {
     
 }
 
+
+-(void) taskThree {
+    
+    @autoreleasepool {
+        
+        __block NSInteger a = 100;
+        
+        __block NSInteger b = 100;
+        
+        
+        NSOperationQueue *queueFirst = [[NSOperationQueue alloc] init];
+        
+        NSOperationQueue *queueSecond = [[NSOperationQueue alloc] init];
+        
+
+        
+        
+        NSBlockOperation *operationOne = [NSBlockOperation blockOperationWithBlock:^{
+            
+            NSLog(@"К a = %ld прибавили 3, operationOne", (long)a);
+            
+            a = a + 3;
+        }];
+        
+        
+        NSBlockOperation *operationTwo = [NSBlockOperation blockOperationWithBlock:^{
+            
+            NSLog(@"a = %ld умножили на 2, operationTwo", (long)a);
+            
+            a = a * 2;
+        }];
+        
+        NSBlockOperation *operationThree = [NSBlockOperation blockOperationWithBlock:^{
+            
+            NSLog(@"К a = %ld прибавили 8, operationThree", (long)a);
+            
+            a = a + 8;
+        }];
+        
+        NSBlockOperation *operationFour = [NSBlockOperation blockOperationWithBlock:^{
+            
+            NSLog(@"К a = %ld прибавили 100, operationFour", (long)a);
+            
+            a = a + 100;
+        }];
+        
+        NSBlockOperation *operationFive = [NSBlockOperation blockOperationWithBlock:^{
+            
+            NSLog(@"От a = %ld отняли 10, operationFive", (long)a);
+            
+            a = a - 10;
+        }];
+        
+        NSBlockOperation *operationSix = [NSBlockOperation blockOperationWithBlock:^{
+            
+            NSLog(@"a = %ld поделили на 2, operationSix", (long)a);
+            
+            a = a / 2;
+        }];
+        
+        NSBlockOperation *operationSeven = [NSBlockOperation blockOperationWithBlock:^{
+            
+            NSLog(@"От b = %ld отняли 5, operationSeven", (long)b);
+            
+            b = b - 5;
+        }];
+        
+        NSBlockOperation *operationEight = [NSBlockOperation blockOperationWithBlock:^{
+            
+            NSLog(@"От b = %ld отняли 10, operationEight", (long)b);
+            
+            b = b - 10;
+        }];
+        
+        NSBlockOperation *operationNine = [NSBlockOperation blockOperationWithBlock:^{
+            
+            NSLog(@"b = %ld разделили на 5, operationNine", (long)b);
+            
+            b = b / 5;
+        }];
+        
+        NSBlockOperation *operationTen = [NSBlockOperation blockOperationWithBlock:^{
+            
+            NSLog(@"a = %ld, b = %ld", (long)a, (long)b);
+        }];
+        
+        
+        [queueFirst addOperation:operationOne];
+
+        [queueFirst addOperation:operationTwo];
+
+        [queueFirst addOperation:operationThree];
+
+        [queueFirst addOperation:operationFour];
+
+        [queueFirst addOperation:operationFive];
+        
+        
+        [operationSix addDependency:operationSeven];
+        
+        [operationSeven addDependency:operationEight];
+        
+        [operationEight addDependency:operationNine];
+        
+        [operationTen addDependency:operationSix];
+        
+        
+        [queueSecond addOperation:operationTen];
+        
+        [queueSecond addOperation:operationSix];
+        
+        [queueSecond addOperation:operationSeven];
+        
+        [queueSecond addOperation:operationEight];
+        
+        [queueSecond addOperation:operationNine];
+
+    }
+    
+}
+
 @end
+
+
