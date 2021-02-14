@@ -1,14 +1,14 @@
 //
-//  HomeworkOne.m
+//  HomeworkTwo.m
 //  geekbrains_hw2
 //
-//  Created by Admin on 2/12/19.
+//  Created by Admin on 2/13/19.
 //  Copyright © 2019 Admin. All rights reserved.
 //
 
-#import "HomeworkOne.h"
+#import "HomeworkTwo.h"
 
-@implementation HomeworkOne
+@implementation HomeworkTwo
 
 -(void)selectTask {
     
@@ -16,7 +16,7 @@
     
     do {
     
-        printf("Выберите задание:\n1) Арифметические операции;\n2) Среднее число;\n0) выход.\n\n");
+        printf("Выберите задание:\n1) Арифметические операции;\n2) Входит ли буква в английский алфавит;\n0) выход.\n");
         
         scanf("%d", &value);
         
@@ -58,11 +58,9 @@
     
     float second = 0;
     
-    float result = 0;
-    
     char operation[1];
     
-    bool programComplete = false;
+    bool programComplete = true;
     
     do {
     
@@ -84,7 +82,7 @@
         
             case '+':
             
-                result = first + second;
+                calculateAddition(&first, &second);
                 
                 programComplete = true;
                 
@@ -92,7 +90,7 @@
                 
             case '-':
                 
-                result = first - second;
+                calculateSubtraction(&first, &second);
                 
                 programComplete = true;
                 
@@ -100,28 +98,22 @@
                 
             case '/':
                 
-                if (second != 0) {
+                calculateDeletion(&first, &second);
                 
-                    result = first / second;
-                    
-                    programComplete = true;
-                } else {
-                    
-                    printf("На 0 делить нельзя \n\n");
-                }
+                programComplete = true;
                 
                 break;
                 
             case '*':
-               
-                result = first * second;
+                
+                calculateMultiplication(&first, &second);
                 
                 programComplete = true;
                 
                 break;
                 
             default:
-               
+                
                 programComplete = false;
                 
                 break;
@@ -129,48 +121,52 @@
         
     } while (!programComplete);
     
-    printf("%f %c %f = %f \n\n", first, operation[0], second, result);
+}
+
+
+void calculateAddition(float * first, float * second) {
+    
+    printf("%f + %f = %f \n\n", *first, *second, *first + *second);
+}
+
+
+void calculateSubtraction(float * first, float * second) {
+    
+    printf("%f - %f = %f \n\n", *first, *second, *first - *second);
+}
+
+
+void calculateMultiplication(float * first, float * second) {
+   
+    printf("%f * %f = %f \n\n", *first, *second, *first * *second);
+}
+
+
+void calculateDeletion(float * first, float * second) {
+   
+    if (*second != 0) {
+    
+        printf("%f / %f = %f \n\n", *first, *second, *first / *second);
+    } else {
+        
+        printf("На 0 делить нельзя \n\n");
+    }
+    
 }
 
 
 -(void) taskTwo {
+   
+    char value[1];
     
-    int first = 0;
+    printf("Введите букву: ");
     
-    int second = 0;
+    scanf("%s", value);
     
-    int third = 0;
+    printf(((value[0] >= 'a') && (value[0] <= 'z')) || ((value[0] >= 'A') && (value[0] <= 'Z')) ? "Символ %c принадлежит английскому алфавиту" : "Символ %c НЕ принадлежит английскому алфавиту", value[0]);
     
-    printf("Первое число: ");
-    
-    scanf("%d", &first);
-    
-    printf("Второе число: ");
-    
-    scanf("%d", &second);
-    
-    printf("Третье число: ");
-    
-    scanf("%d", &third);
-    
-    printf("\n");
-    
-    if (first == second || third == second || first == third) {
-        
-        printf("Значения должны быть уникальными\n\n");
-        
-        return;
-    } else if ((first > second && first < third) || (first > third && first < second)) {
-        
-        printf("Среднее значение: %d \n\n", first);
-    } else if ((second > first && second < third) || (second > third && second < first)) {
-        
-        printf("Среднее значение: %d \n\n", second);
-    } else {
-        
-        printf("Среднее значение: %d \n\n", third);
-    }
-    
+    printf("\n\n");
 }
+
 
 @end

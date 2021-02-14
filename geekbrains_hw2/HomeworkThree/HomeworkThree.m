@@ -1,22 +1,27 @@
 //
-//  HomeworkOne.m
+//  HomeworkThree.m
 //  geekbrains_hw2
 //
-//  Created by Admin on 2/12/19.
+//  Created by Admin on 2/13/19.
 //  Copyright © 2019 Admin. All rights reserved.
 //
 
-#import "HomeworkOne.h"
+#import "HomeworkThree.h"
 
-@implementation HomeworkOne
+@implementation HomeworkThree
+
+typedef char Operation [1];
+
+typedef struct Human Human;
+
 
 -(void)selectTask {
-    
+   
     int value = -1;
     
     do {
     
-        printf("Выберите задание:\n1) Арифметические операции;\n2) Среднее число;\n0) выход.\n\n");
+        printf("Выберите задание:\n1) Вывод строк;\n2) Калькулятор;\n3) Анкета;\n0) выход.\n");
         
         scanf("%d", &value);
         
@@ -40,6 +45,12 @@
                 
                 break;
                 
+            case 3:
+                
+                [self taskThree];
+                
+                break;
+                
             default:
                 
                 printf("Выберите другое значение\n");
@@ -54,15 +65,25 @@
 
 -(void) taskOne {
     
+    NSArray *arrayStrings = @[@"Строка 1", @"Строка 2", @"Строка 3", @"Строка 4", @"Строка 5"];
+    
+    for (int i = 0; i < arrayStrings.count; i++) {
+    
+        printf("%s \n", [arrayStrings[i] UTF8String]);
+    }
+    
+}
+
+
+-(void) taskTwo {
+    
     float first = 0;
     
     float second = 0;
     
-    float result = 0;
-    
     char operation[1];
     
-    bool programComplete = false;
+    bool programComplete = true;
     
     do {
     
@@ -82,95 +103,71 @@
         
         switch (operation[0]) {
         
-            case '+':
+            case addition:
             
-                result = first + second;
+                calculateAddition(&first, &second);
                 
                 programComplete = true;
                 
                 break;
                 
-            case '-':
+            case subtraction:
                 
-                result = first - second;
+                calculateSubtraction(&first, &second);
                 
                 programComplete = true;
                 
                 break;
                 
-            case '/':
+            case deletion:
                 
-                if (second != 0) {
+                calculateDeletion(&first, &second);
                 
-                    result = first / second;
-                    
-                    programComplete = true;
-                } else {
-                    
-                    printf("На 0 делить нельзя \n\n");
-                }
+                programComplete = true;
                 
                 break;
                 
-            case '*':
-               
-                result = first * second;
+            case multiplication:
+                
+                calculateMultiplication(&first, &second);
                 
                 programComplete = true;
                 
                 break;
                 
             default:
-               
+                
                 programComplete = false;
                 
                 break;
         }
         
     } while (!programComplete);
-    
-    printf("%f %c %f = %f \n\n", first, operation[0], second, result);
+
 }
 
 
--(void) taskTwo {
+-(void) taskThree {
     
-    int first = 0;
+    Human humanAlex;
     
-    int second = 0;
+    humanAlex.name = @"Alex";
     
-    int third = 0;
+    humanAlex.age = 20;
     
-    printf("Первое число: ");
+    humanAlex.gender = male;
     
-    scanf("%d", &first);
+    Human humanMerilin;
     
-    printf("Второе число: ");
+    humanMerilin.name = @"Merilin";
     
-    scanf("%d", &second);
+    humanMerilin.age = 18;
     
-    printf("Третье число: ");
+    humanMerilin.gender = female;
     
-    scanf("%d", &third);
+    NSLog(@"Человек: \n Имя - %@ \n Возраст - %ld \n Пол - %@ \n", humanAlex.name, (long)humanAlex.age, humanAlex.gender ? @"Мужской" : @"Женский");
     
-    printf("\n");
-    
-    if (first == second || third == second || first == third) {
-        
-        printf("Значения должны быть уникальными\n\n");
-        
-        return;
-    } else if ((first > second && first < third) || (first > third && first < second)) {
-        
-        printf("Среднее значение: %d \n\n", first);
-    } else if ((second > first && second < third) || (second > third && second < first)) {
-        
-        printf("Среднее значение: %d \n\n", second);
-    } else {
-        
-        printf("Среднее значение: %d \n\n", third);
-    }
-    
+    NSLog(@"Человек: \n Имя - %@ \n Возраст - %ld \n Пол - %@ \n", humanMerilin.name, (long)humanMerilin.age, humanMerilin.gender ? @"Мужской" : @"Женский");
 }
 
 @end

@@ -7,8 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84657124222CFFEA00F301D6 /* HomeworkSix.m in Sources */ = {isa = PBXBuildFile; fileRef = 84657123222CFFEA00F301D6 /* HomeworkSix.m */; };
 		847877F82212792F0049ACF5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 847877F72212792F0049ACF5 /* main.m */; };
 		84787801221279C70049ACF5 /* HomeworkOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 84787800221279C70049ACF5 /* HomeworkOne.m */; };
+		8490F95A221AC7070065FC27 /* Bird.m in Sources */ = {isa = PBXBuildFile; fileRef = 8490F959221AC7070065FC27 /* Bird.m */; };
+		8490F95E221AC8C40065FC27 /* Wing.m in Sources */ = {isa = PBXBuildFile; fileRef = 8490F95D221AC8C40065FC27 /* Wing.m */; };
+		8490F962221ACDCA0065FC27 /* Flock.m in Sources */ = {isa = PBXBuildFile; fileRef = 8490F961221ACDCA0065FC27 /* Flock.m */; };
+		84A6097D22140E4700AA8B37 /* HomeworkTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A6097C22140E4700AA8B37 /* HomeworkTwo.m */; };
+		84A6098022140E5400AA8B37 /* HomeworkThree.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A6097F22140E5400AA8B37 /* HomeworkThree.m */; };
+		84A6098322140E6200AA8B37 /* HomeworkFour.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A6098222140E6200AA8B37 /* HomeworkFour.m */; };
+		84A6098622140E7000AA8B37 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A6098522140E7000AA8B37 /* Student.m */; };
+		84A6098A2214186900AA8B37 /* HomeworkFive.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A609892214186900AA8B37 /* HomeworkFive.m */; };
+		84A6098E2214267E00AA8B37 /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A6098D2214267E00AA8B37 /* Calculator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,10 +34,30 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		84657122222CFFEA00F301D6 /* HomeworkSix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeworkSix.h; sourceTree = "<group>"; };
+		84657123222CFFEA00F301D6 /* HomeworkSix.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeworkSix.m; sourceTree = "<group>"; };
 		847877F42212792F0049ACF5 /* geekbrains_hw2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = geekbrains_hw2; sourceTree = BUILT_PRODUCTS_DIR; };
 		847877F72212792F0049ACF5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		847877FF221279C70049ACF5 /* HomeworkOne.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeworkOne.h; sourceTree = "<group>"; };
 		84787800221279C70049ACF5 /* HomeworkOne.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeworkOne.m; sourceTree = "<group>"; };
+		8490F958221AC7070065FC27 /* Bird.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bird.h; sourceTree = "<group>"; };
+		8490F959221AC7070065FC27 /* Bird.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bird.m; sourceTree = "<group>"; };
+		8490F95C221AC8C40065FC27 /* Wing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Wing.h; sourceTree = "<group>"; };
+		8490F95D221AC8C40065FC27 /* Wing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Wing.m; sourceTree = "<group>"; };
+		8490F960221ACDCA0065FC27 /* Flock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Flock.h; sourceTree = "<group>"; };
+		8490F961221ACDCA0065FC27 /* Flock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Flock.m; sourceTree = "<group>"; };
+		84A6097B22140E4700AA8B37 /* HomeworkTwo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeworkTwo.h; sourceTree = "<group>"; };
+		84A6097C22140E4700AA8B37 /* HomeworkTwo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeworkTwo.m; sourceTree = "<group>"; };
+		84A6097E22140E5400AA8B37 /* HomeworkThree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeworkThree.h; sourceTree = "<group>"; };
+		84A6097F22140E5400AA8B37 /* HomeworkThree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeworkThree.m; sourceTree = "<group>"; };
+		84A6098122140E6200AA8B37 /* HomeworkFour.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeworkFour.h; sourceTree = "<group>"; };
+		84A6098222140E6200AA8B37 /* HomeworkFour.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeworkFour.m; sourceTree = "<group>"; };
+		84A6098422140E7000AA8B37 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		84A6098522140E7000AA8B37 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		84A609882214186900AA8B37 /* HomeworkFive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeworkFive.h; sourceTree = "<group>"; };
+		84A609892214186900AA8B37 /* HomeworkFive.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeworkFive.m; sourceTree = "<group>"; };
+		84A6098C2214267E00AA8B37 /* Calculator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Calculator.h; sourceTree = "<group>"; };
+		84A6098D2214267E00AA8B37 /* Calculator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Calculator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +71,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84657121222CFFBB00F301D6 /* HomeworkSix */ = {
+			isa = PBXGroup;
+			children = (
+				84657122222CFFEA00F301D6 /* HomeworkSix.h */,
+				84657123222CFFEA00F301D6 /* HomeworkSix.m */,
+			);
+			path = HomeworkSix;
+			sourceTree = "<group>";
+		};
 		847877EB2212792F0049ACF5 = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +100,11 @@
 			isa = PBXGroup;
 			children = (
 				847877FE221279AC0049ACF5 /* HomeworkOne */,
+				84A6097722140E0F00AA8B37 /* HomeworkTwo */,
+				84A6097822140E1C00AA8B37 /* HomeworkThree */,
+				84A6097922140E2400AA8B37 /* HomeworkFour */,
+				84A609872214179500AA8B37 /* HomeworkFive */,
+				84657121222CFFBB00F301D6 /* HomeworkSix */,
 				847877F72212792F0049ACF5 /* main.m */,
 			);
 			path = geekbrains_hw2;
@@ -73,6 +117,92 @@
 				84787800221279C70049ACF5 /* HomeworkOne.m */,
 			);
 			path = HomeworkOne;
+			sourceTree = "<group>";
+		};
+		8490F957221AC6F20065FC27 /* Bird */ = {
+			isa = PBXGroup;
+			children = (
+				8490F958221AC7070065FC27 /* Bird.h */,
+				8490F959221AC7070065FC27 /* Bird.m */,
+			);
+			path = Bird;
+			sourceTree = "<group>";
+		};
+		8490F95B221AC8970065FC27 /* Wing */ = {
+			isa = PBXGroup;
+			children = (
+				8490F95C221AC8C40065FC27 /* Wing.h */,
+				8490F95D221AC8C40065FC27 /* Wing.m */,
+			);
+			path = Wing;
+			sourceTree = "<group>";
+		};
+		8490F95F221ACDAE0065FC27 /* Flock */ = {
+			isa = PBXGroup;
+			children = (
+				8490F960221ACDCA0065FC27 /* Flock.h */,
+				8490F961221ACDCA0065FC27 /* Flock.m */,
+			);
+			path = Flock;
+			sourceTree = "<group>";
+		};
+		84A6097722140E0F00AA8B37 /* HomeworkTwo */ = {
+			isa = PBXGroup;
+			children = (
+				84A6097B22140E4700AA8B37 /* HomeworkTwo.h */,
+				84A6097C22140E4700AA8B37 /* HomeworkTwo.m */,
+			);
+			path = HomeworkTwo;
+			sourceTree = "<group>";
+		};
+		84A6097822140E1C00AA8B37 /* HomeworkThree */ = {
+			isa = PBXGroup;
+			children = (
+				84A6097E22140E5400AA8B37 /* HomeworkThree.h */,
+				84A6097F22140E5400AA8B37 /* HomeworkThree.m */,
+			);
+			path = HomeworkThree;
+			sourceTree = "<group>";
+		};
+		84A6097922140E2400AA8B37 /* HomeworkFour */ = {
+			isa = PBXGroup;
+			children = (
+				84A6097A22140E3500AA8B37 /* Student */,
+				84A6098122140E6200AA8B37 /* HomeworkFour.h */,
+				84A6098222140E6200AA8B37 /* HomeworkFour.m */,
+			);
+			path = HomeworkFour;
+			sourceTree = "<group>";
+		};
+		84A6097A22140E3500AA8B37 /* Student */ = {
+			isa = PBXGroup;
+			children = (
+				84A6098422140E7000AA8B37 /* Student.h */,
+				84A6098522140E7000AA8B37 /* Student.m */,
+			);
+			path = Student;
+			sourceTree = "<group>";
+		};
+		84A609872214179500AA8B37 /* HomeworkFive */ = {
+			isa = PBXGroup;
+			children = (
+				8490F95F221ACDAE0065FC27 /* Flock */,
+				8490F957221AC6F20065FC27 /* Bird */,
+				8490F95B221AC8970065FC27 /* Wing */,
+				84A6098B2214263E00AA8B37 /* Calculator */,
+				84A609882214186900AA8B37 /* HomeworkFive.h */,
+				84A609892214186900AA8B37 /* HomeworkFive.m */,
+			);
+			path = HomeworkFive;
+			sourceTree = "<group>";
+		};
+		84A6098B2214263E00AA8B37 /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				84A6098C2214267E00AA8B37 /* Calculator.h */,
+				84A6098D2214267E00AA8B37 /* Calculator.m */,
+			);
+			path = Calculator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,8 +261,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8490F95E221AC8C40065FC27 /* Wing.m in Sources */,
+				84A6098322140E6200AA8B37 /* HomeworkFour.m in Sources */,
+				84A6098E2214267E00AA8B37 /* Calculator.m in Sources */,
+				8490F95A221AC7070065FC27 /* Bird.m in Sources */,
 				84787801221279C70049ACF5 /* HomeworkOne.m in Sources */,
 				847877F82212792F0049ACF5 /* main.m in Sources */,
+				84A6098022140E5400AA8B37 /* HomeworkThree.m in Sources */,
+				84A6098A2214186900AA8B37 /* HomeworkFive.m in Sources */,
+				84657124222CFFEA00F301D6 /* HomeworkSix.m in Sources */,
+				8490F962221ACDCA0065FC27 /* Flock.m in Sources */,
+				84A6097D22140E4700AA8B37 /* HomeworkTwo.m in Sources */,
+				84A6098622140E7000AA8B37 /* Student.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +393,7 @@
 		847877FC2212792F0049ACF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7J4TANDD7J;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -262,6 +403,7 @@
 		847877FD2212792F0049ACF5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7J4TANDD7J;
 				PRODUCT_NAME = "$(TARGET_NAME)";
